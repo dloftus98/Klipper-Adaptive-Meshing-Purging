@@ -172,6 +172,8 @@ The cleanest and easiest way to get started with KAMP is to use Moonraker's Upda
 
   * `flow_rate:` This is the desired flow rate you wish to purge at. You should set this value to be close to the flow limit of your hotend. Standard flow hotends like MicroSwiss, Dragonfly, or Revo should be around `12` or so, while higher flow hotends, like the Rapido or Dragon, should be set somewhere around `20`.
 
+  * `purge_on_right:` Set to `True` to purge along the Y axis on the right side of the print area instead of the left. This is useful for avoiding probe or sensor interference (for example, a front-left BLTouch) when purge blobs form.
+
   >**Note:**
 It is required to add `max_extrude_cross_section: 5` to your `[extruder]` config to allow effective purging to be possible. KAMP will warn you if you forget to set this value, and skip the purge so the printer will not be halted. It is also recommended to set up [firmware_retraction](https://www.klipper3d.org/Config_Reference.html?h=retract#firmware_retraction) inside of klipper so KAMP can use the correct retraction settings for your machine. If this is not found, KAMP will warn you, and use reasonable direct-drive extruder values to complete the purge.
 
@@ -234,6 +236,5 @@ KAMP was not a one man effort, it was made possible with help from fine folks su
 - [Takuya's Tools](http://tools.takuya.wtf/index.html) A collection of handy tools for any Klipper user.
 
 ---
-
 
 
